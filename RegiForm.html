@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Form</title>
+    <style>
+    table-header th {
+            background-color: #00000;
+            color: #000000;
+        }
+.registration-form {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #83d5f2;
+}
+h2 {
+    text-align: center;
+    color: #000000;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff1e6;
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    
+}
+
+th, td {
+    border: 1px solid #000000;
+    padding: 8px;
+    text-align: left;
+    color: #000000;
+}
+
+th {
+    background-color: #f0f8ff;
+}
+    </style>
+</head>
+<body>
+    <div class="registration-form">
+        <h2>Registration Form</h2>
+        <form id="registration-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required><br><br>
+
+            <input type="submit" value="Register">
+        </form>
+
+        <h2>Available Courses</h2>
+        <table class="course-table">
+            <thead>
+                <tr class="table-header">
+                    <th>Course Name</th>
+                    <th>Instructor</th>
+                    <th>Schedule</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Web System and Technology</td>
+                    <td>Eunice Sison</td>
+                    <td>Thursday, 5:30 PM - 7:30 PM</td>
+                </tr>
+          
+                <tr>
+                    <td>Platform Technology</td>
+                    <td>Richmond Villanueva</td>
+                    <td>Tuesday-Thursday, 2:00 PM - 4:00 PM</td>
+                </tr>
+                
+                </tbody>
+                
+        </table>
+    </div>
+    <script>
+        const registrationForm = document.getElementById('registration-form');
+
+        registrationForm.addEventListener('submit', (event) => {
+            event.preventDefault();   
+ // Prevent default form submission
+
+            const formData = new FormData(registrationForm);
+            const formDataObject = {};
+
+            for (const [key, value] of formData.entries()) {
+                formDataObject[key] = value;
+            }
+            // Display a success message or redirect to another page
+            alert('Form data saved successfully!');
+            
+        });
+    </script>
+</body>
+</html>
